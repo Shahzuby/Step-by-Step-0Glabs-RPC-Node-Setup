@@ -17,15 +17,13 @@ This guide will help you set up a **Zero Gravity (0G) RPC Node** on a **Google C
 
 ## 🔓 GCP Firewall: Open Required Ports
 
-Go to: **VPC Network > Firewall > Create Firewall Rule**
-
-Open these ports:
-- `26656` — P2P (Node Sync)
-- `26657` — RPC (Public API)
-- `6060` — Metrics
-- `1317` — REST API (Optional)
-- `9090` — gRPC
-- `9091` — gRPC-Web
+Name	zero-gravity-firewall
+Direction	Ingress
+Action on match	Allow
+Targets	All instances in the network
+Source IP Ranges	0.0.0.0/0
+Ports
+tcp:26656,26657,6060,1317,9090,9091,22
 
 ---
 
